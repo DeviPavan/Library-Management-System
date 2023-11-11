@@ -40,25 +40,40 @@ class Book extends Item{
 
     }
 }
-/*class DVD extends Item{
+class DVD extends Item{
     String NameofDVD;
-    int noofDVDs;
-    int TotalDvds;
-    boolean DVDAvailable;
-    void add(String NameofDVD,int noofDVDs){
-        System.out.println("Added Book Successfully");
+    int noofDVDs=0;
+    String Composer;
+    int issuedDVDCount=0;
+    void add(String NameofDVD, String composer, int noofDVDs,int issuedDVDCount){
+        System.out.println("Added DVD Successfully");
+        noofDVDs++;
     }
-
+    @Override
+    void checkout() {
+        System.out.println("Checked out Successfully");
+        noofDVDs--;
+        issuedDVDCount++;
+    }
 
     @Override
     void returnItem() {
+            System.out.println("DVD returned Successfully");
+            noofDVDs++;
+            issuedDVDCount--;
+        }
+
+    @Override
+    void displayDetails() {
+
     }
-}*/
+}
 public class TestLibrarySystem
 {
     public static void main(String[] args){
         String avail;
         Book b=new Book();
+        DVD d=new DVD();
         System.out.println("Welcome to the Library Management System!\n\n\n ");
         System.out.println(" 1.Add Book \n" +
                 "2. Add DVD \n" +
@@ -78,10 +93,18 @@ public class TestLibrarySystem
                     b.author = s.next();
                     System.out.print("Enter publication year:");
                     b.year = s.nextInt();
-                    b.add(b.title, b.author, b.year);3
+                    b.add(b.title, b.author, b.year);
                     break;
                 case 2:
-
+                    System.out.print("Enter NameofDVD:");
+                    d.NameofDVD = s.next();
+                    System.out.print("Enter composer:");
+                    d.Composer=s.next();
+                    System.out.print("no of DVDs:");
+                    d.noofDVDs = s.nextInt();
+                    System.out.print("issued DVD count:");
+                    d.issuedDVDCount= Integer.parseInt(s.next());
+                    b.add(d.NameofDVD, String.valueOf(d.noofDVDs),d.issuedDVDCount);
                     break;
                 case 3:
                     System.out.println("Available Items:");
@@ -95,8 +118,24 @@ public class TestLibrarySystem
                     System.out.println("title:"+b.title+"author:"+b.author+"year:"+b.year+"available:"+avail);
                     break;
                 case 4:
+                    System.out.println("Enter the title of the item you want to check out:");
+                    b.title = s.next();
+                    if(b.noofBooks>0)
+                    {
+                        //System.out.println("Item checkout Successfully");
+                        b.noofBooks--;
+                        b.issuedBooksCount++;
+                    }
+                    else {
+                        System.out.println("Item checkout Successfully");
+                    }
                     break;
                 case 5:
+                    System.out.println("Enter the title of the item you want to return");
+                    b.title = s.next();
+                    b.noofBooks++;
+                    b.issuedBooksCount--;
+                    System.out.println("Item returned successfully!");
                     break;
                 case 6:
                     exit(0);
