@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.List;
 
-public class ShoppingCart {
+ class ShoppingCart {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         Cart cart = new Cart();
