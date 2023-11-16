@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.List;
 
 public class ShoppingCart {
-    public static <InputMismatchException extends Throwable> void main(String args[]) {
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         Cart cart = new Cart();
         List<Product> availableProducts = creatingSampleProductsList();
