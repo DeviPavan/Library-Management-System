@@ -127,11 +127,6 @@ public class ShoppingCart {
 
 
 
-
-
-
-
-
         /*// Creating an array(static) for the shopping cart
         Product[] product_cart = new Product[3];
         Product laptop = new Product(1, "Laptop", 1200.0F, 100);
