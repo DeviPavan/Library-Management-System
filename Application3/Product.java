@@ -14,34 +14,42 @@ class Product {
     }
 
     public int getproductID() {
+
         return productID;
     }
 
     public void setproductID(int productID) {
+
         productID = productID;
     }
 
     public String getProductName() {
+
         return productName;
     }
 
     public void setProductName(String productName) {
+
         productName = productName;
     }
 
     public float getProductPrice() {
+
         return productPrice;
     }
 
     public void setProductPrice(float productPrice) {
+
         productPrice = productPrice;
     }
 
     public int getProductQuantity() {
+
         return productQuantity;
     }
 
     public void setProductQuantity(int productQuantity) {
+
         productQuantity = productQuantity;
     }
 
@@ -49,16 +57,6 @@ class Product {
         return "Product{" + "name='" + productName + '\'' + ",productPrice=" + productPrice + '\'' + "productQuantity=" + productQuantity + '\'' + "productName=" + productName + '}';
 
     }
-
-    /*public void add(Product product) {
-        product.add(product);
-    }
-
-    public boolean remove(Product product) {
-        product.remove(product);
-        return false;
-    }*/
-
 
 }
 
